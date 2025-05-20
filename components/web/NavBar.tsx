@@ -12,6 +12,7 @@ import {
 import { Menu, MoveRight, X } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
+import { ThemeToggle } from "@/components/ui/theme.toggle";
 
 export const NavBar = () => {
   const navigationItems = [
@@ -128,6 +129,9 @@ export const NavBar = () => {
             Book a demo
           </Button>
           <div className="border-r hidden md:inline"></div>
+          <div className="hidden md:inline">
+            <ThemeToggle />
+          </div>
           <Button variant="outline">Sign in</Button>
           <Button>Get started</Button>
         </div>
@@ -137,6 +141,9 @@ export const NavBar = () => {
           </Button>
           {isOpen && (
             <div className="absolute top-20 border-t flex flex-col w-full right-0 bg-background shadow-lg py-4 container gap-8">
+              <div className="mb-4">
+                <ThemeToggle />
+              </div>
               {navigationItems.map((item) => (
                 <div key={item.title}>
                   <div className="flex flex-col gap-2">

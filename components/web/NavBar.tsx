@@ -11,7 +11,6 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Menu, MoveRight, X } from "lucide-react";
 import { useState } from "react";
-import Link from "next/link";
 import { ThemeToggle } from "@/components/ui/theme.toggle";
 import Image from "next/image";
 import { InteractiveButton } from "../ui/interactive-button";

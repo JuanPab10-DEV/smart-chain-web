@@ -8,7 +8,7 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import { Quote } from "lucide-react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
 export const Testimonials = () => {
   const [api, setApi] = useState<CarouselApi>();
@@ -17,7 +17,7 @@ export const Testimonials = () => {
   const testimonials = [
     {
       quote:
-        "Con Smart Chain no solo crecimos… reconectamos con lo que realmente somos como organización.",
+        "Con Smart Chain no solo crecimos&hellip; reconectamos con lo que realmente somos como organización.",
       author: "Diana M.",
       role: "CEO Retail LATAM",
       avatar: "DM",
@@ -31,7 +31,7 @@ export const Testimonials = () => {
     },
     {
       quote:
-        "No nos vendieron un informe. Se sentaron con nosotros, observaron, preguntaron… y nos ayudaron a evolucionar.",
+        "No nos vendieron un informe. Se sentaron con nosotros, observaron, preguntaron&hellip; y nos ayudaron a evolucionar.",
       author: "Verónica L.",
       role: "Directora de Cultura",
       avatar: "VL",
@@ -70,7 +70,7 @@ export const Testimonials = () => {
                     <div className="flex flex-col gap-4">
                       <div className="flex flex-col">
                         <blockquote className="text-lg leading-relaxed">
-                          "{testimonial.quote}"
+                          &ldquo;{testimonial.quote}&rdquo;
                         </blockquote>
                       </div>
                       <div className="flex flex-row gap-3 items-center">

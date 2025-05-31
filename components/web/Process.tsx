@@ -62,7 +62,7 @@ export const Process = () => (
                 "Medimos no solo resultados, sino el cambio cultural y la sostenibilidad de la transformación.",
               icon: <CheckCircle2 className="w-10 h-10 text-primary" />,
             },
-          ].map((item, index, array) => (
+          ].map((item) => (
             <div key={item.step} className="flex flex-col items-center relative">
               <div className="flex flex-col items-center relative z-10">
                 {item.icon}

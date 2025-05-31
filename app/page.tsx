@@ -9,7 +9,6 @@ import { NavBar } from "@/components/web/NavBar";
 import { Process } from "@/components/web/Process";
 import { Services } from "@/components/web/Services";
 import { Testimonials } from "@/components/web/Testimonials";
-import Image from "next/image";
 
 export default function Home() {
   return (

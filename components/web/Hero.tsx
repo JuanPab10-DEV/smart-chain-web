@@ -1,9 +1,8 @@
 import { MoveRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { AnimatedNumber } from "../motion-primitives/animated-number";
 import { TextAnimate } from "../magicui/text-animate";
 import { BlurFade } from "@/components/magicui/blur-fade";
+import { TrustedBy } from "@/components/ui/trusted-by";
 import Image from "next/image";
 
 export const Hero = () => (
@@ -12,22 +11,7 @@ export const Hero = () => (
       <div className="grid grid-cols-1 gap-8 items-center md:grid-cols-2">
         <div className="flex gap-4 flex-col">
           <div>
-            <Badge
-              variant="outline"
-              className="px-4 py-2 shadow-lg shadow-primary/25 border-primary/50 bg-gradient-to-r from-background to-primary/5"
-            >
-              Confiado por{" "}
-              <AnimatedNumber
-                value={120}
-                startValue={0}
-                springOptions={{
-                  bounce: 0,
-                  duration: 8000,
-                }}
-                className="font-semibold"
-              />{" "}
-              empresas
-            </Badge>
+            <TrustedBy />
           </div>
           <div className="flex gap-4 flex-col">
             <h1 className="text-5xl md:text-7xl max-w-lg tracking-tighter text-left font-regular">

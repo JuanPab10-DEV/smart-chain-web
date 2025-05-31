@@ -2,7 +2,7 @@ import { Benefits } from "@/components/web/Benefits";
 import { Competitive } from "@/components/web/Competitive";
 import { CTA } from "@/components/web/CTA";
 import { FAQs } from "@/components/web/FAQs";
-import { Footer } from "@/components/web/Footer";
+import { Footer } from "@/components/ui/footer-section";
 import { Hero } from "@/components/web/Hero";
 import { Logos } from "@/components/web/Logos";
 import { NavBar } from "@/components/web/NavBar";

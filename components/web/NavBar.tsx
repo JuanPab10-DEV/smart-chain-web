@@ -178,6 +178,7 @@ export const NavBar = () => {
             Casos de éxito
           </Button>
           <InteractiveButton
+            className="hidden md:flex"
             onClick={() => scrollToSection("cta")}
             text="Empezar ahora"
           />
@@ -187,7 +188,7 @@ export const NavBar = () => {
             {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </Button>
           {isOpen && (
-            <div className="absolute top-20 border-t flex flex-col w-full right-0 bg-background shadow-lg py-4 container gap-8">
+            <div className="absolute p-8 top-20 border-t flex flex-col w-full right-0 bg-background shadow-lg py-4 container gap-8">
               <div className="mb-4">
                 <ThemeToggle />
               </div>

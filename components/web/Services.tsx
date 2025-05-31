@@ -1,5 +1,20 @@
-import { User } from "lucide-react";
+'use client'
+
+import { User, Brain, Truck, ChartBar } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { BlurFade } from "@/components/magicui/blur-fade";
+
+// Función para scroll suave a secciones
+const scrollToSection = (sectionId: string) => {
+  const element = document.getElementById(sectionId);
+  if (element) {
+    element.scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
+};
 
 export const Services = () => (
   <div className="w-full py-20 lg:py-40">
@@ -7,59 +22,145 @@ export const Services = () => (
       <div className="flex flex-col gap-10">
         <div className="flex gap-4 flex-col items-start">
           <div>
-            <Badge>Platform</Badge>
+            <Badge>Servicios</Badge>
           </div>
           <div className="flex gap-2 flex-col">
-            <h2 className="text-3xl md:text-5xl tracking-tighter max-w-xl font-regular text-left">
-              Something new!
+            <h2 className="text-3xl md:text-5xl text-nowrap tracking-tighter max-w-xl font-regular text-left">
+              Explora nuestros módulos de transformación
             </h2>
-            <p className="text-lg max-w-xl lg:max-w-lg leading-relaxed tracking-tight text-muted-foreground  text-left">
-              Managing a small business today is already tough.
+            <p className="text-lg max-w-xl text-nowrap lg:max-w-lg leading-relaxed tracking-tight text-muted-foreground  text-left">
+              Imagina una consultoría donde eliges lo que necesitas, y aprendes
+              mientras transformas. Eso es lo que hacemos con nuestro modelo All
+              You Can Learn:
             </p>
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="bg-muted rounded-md h-full lg:col-span-2 p-6 aspect-square lg:aspect-auto flex justify-between flex-col">
-            <User className="w-8 h-8 stroke-1" />
-            <div className="flex flex-col">
-              <h3 className="text-xl tracking-tight">Pay supplier invoices</h3>
-              <p className="text-muted-foreground max-w-xs text-base">
-                Our goal is to streamline SMB trade, making it easier and faster
-                than ever.
-              </p>
+          <BlurFade delay={0.35} inView className="lg:col-span-2">
+            <div 
+              className="relative rounded-md h-full p-6 aspect-square lg:aspect-auto flex justify-between flex-col overflow-hidden"
+              style={{
+                backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.8) 100%), url('https://lh3.googleusercontent.com/p/AF1QipMBgrjlfGygI_t_jxhh1ZPfPRUXFo8_0roiXkHQ=s680-w680-h510-rw')`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat'
+              }}
+            >
+              <User className="w-8 h-8 stroke-1 text-white/90" />
+              <div className="flex flex-col gap-4 relative z-10">
+                <div className="flex flex-col">
+                  <h3 className="text-xl tracking-tight text-white font-semibold">
+                    Productividad desde el ser
+                  </h3>
+                  <p className="text-white/90 max-w-xs md:max-w-lg text-base">
+                    Maximizamos la eficiencia integrando herramientas digitales con
+                    bienestar laboral. Porque no hay resultados sin personas sanas.
+                  </p>
+                </div>
+                <Button 
+                  variant="secondary" 
+                  className="w-fit bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20 transition-all"
+                  onClick={() => scrollToSection('benefits')}
+                >
+                  Mejorar mi cultura y desempeño
+                </Button>
+              </div>
             </div>
-          </div>
-          <div className="bg-muted rounded-md  aspect-square p-6 flex justify-between flex-col">
-            <User className="w-8 h-8 stroke-1" />
-            <div className="flex flex-col">
-              <h3 className="text-xl tracking-tight">Pay supplier invoices</h3>
-              <p className="text-muted-foreground max-w-xs text-base">
-                Our goal is to streamline SMB trade, making it easier and faster
-                than ever.
-              </p>
+          </BlurFade>
+          
+          <BlurFade delay={0.45} inView>
+            <div 
+              className="relative rounded-md aspect-square p-6 flex justify-between flex-col overflow-hidden"
+              style={{
+                backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.8) 100%), url('https://lh3.googleusercontent.com/p/AF1QipMBgrjlfGygI_t_jxhh1ZPfPRUXFo8_0roiXkHQ=s680-w680-h510-rw')`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat'
+              }}
+            >
+             <Brain className="w-8 h-8 stroke-1 text-white/90" />
+              <div className="flex flex-col gap-4 relative z-10">
+                <div className="flex flex-col">
+                  <h3 className="text-xl tracking-tight text-white font-semibold">
+                    Transformación digital empática
+                  </h3>
+                  <p className="text-white/90 max-w-xs text-base">
+                    Implementamos tecnología sin perder el alma. Automatización, BI
+                    y procesos centrados en las personas.
+                  </p>
+                </div>
+                <Button 
+                  variant="secondary" 
+                  className="w-fit bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20 transition-all"
+                  onClick={() => scrollToSection('process')}
+                >
+                  Digitalizar sin deshumanizar
+                </Button>
+              </div>
             </div>
-          </div>
+          </BlurFade>
 
-          <div className="bg-muted rounded-md aspect-square p-6 flex justify-between flex-col">
-            <User className="w-8 h-8 stroke-1" />
-            <div className="flex flex-col">
-              <h3 className="text-xl tracking-tight">Pay supplier invoices</h3>
-              <p className="text-muted-foreground max-w-xs text-base">
-                Our goal is to streamline SMB trade, making it easier and faster
-                than ever.
-              </p>
+          <BlurFade delay={0.55} inView>
+            <div 
+              className="relative rounded-md aspect-square p-6 flex justify-between flex-col overflow-hidden"
+              style={{
+                backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.8) 100%), url('https://lh3.googleusercontent.com/p/AF1QipMBgrjlfGygI_t_jxhh1ZPfPRUXFo8_0roiXkHQ=s680-w680-h510-rw')`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat'
+              }}
+            >
+              <Truck className="w-8 h-8 stroke-1 text-white/90" />
+              <div className="flex flex-col gap-4 relative z-10">
+                <div className="flex flex-col">
+                  <h3 className="text-xl tracking-tight text-white font-semibold">Logística consciente</h3>
+                  <p className="text-white/90 max-w-xs text-base">
+                    Reinventamos la cadena de suministro con agilidad, trazabilidad
+                    y propósito.
+                  </p>
+                </div>
+                <Button 
+                  variant="secondary" 
+                  className="w-fit bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20 transition-all"
+                  onClick={() => scrollToSection('testimonials')}
+                >
+                  Optimizar mi logística con visión
+                </Button>
+              </div>
             </div>
-          </div>
-          <div className="bg-muted rounded-md h-full lg:col-span-2 p-6 aspect-square lg:aspect-auto flex justify-between flex-col">
-            <User className="w-8 h-8 stroke-1" />
-            <div className="flex flex-col">
-              <h3 className="text-xl tracking-tight">Pay supplier invoices</h3>
-              <p className="text-muted-foreground max-w-xs text-base">
-                Our goal is to streamline SMB trade, making it easier and faster
-                than ever.
-              </p>
+          </BlurFade>
+          
+          <BlurFade delay={0.65} inView className="lg:col-span-2">
+            <div 
+              className="relative rounded-md h-full p-6 aspect-square lg:aspect-auto flex justify-between flex-col overflow-hidden"
+              style={{
+                backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.8) 100%), url('https://lh3.googleusercontent.com/p/AF1QipMBgrjlfGygI_t_jxhh1ZPfPRUXFo8_0roiXkHQ=s680-w680-h510-rw')`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat'
+              }}
+            >
+              <ChartBar className="w-8 h-8 stroke-1 text-white/90" />
+              <div className="flex flex-col gap-4 relative z-10">
+                <div className="flex flex-col">
+                  <h3 className="text-xl tracking-tight text-white font-semibold">
+                    Eficiencia organizacional con sentido
+                  </h3>
+                  <p className="text-white/90 text-base">
+                    No se trata de hacer más. Se trata de hacer mejor, con menos
+                    fricción, más enfoque y propósito claro.
+                  </p>
+                </div>
+                <Button 
+                  variant="secondary" 
+                  className="w-fit bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20 transition-all"
+                  onClick={() => scrollToSection('cta')}
+                >
+                  Quiero operar con propósito
+                </Button>
+              </div>
             </div>
-          </div>
+          </BlurFade>
         </div>
       </div>
     </div>

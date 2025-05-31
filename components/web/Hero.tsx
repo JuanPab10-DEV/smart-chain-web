@@ -1,6 +1,10 @@
 import { MoveRight, PhoneCall } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { AnimatedNumber } from "../motion-primitives/animated-number";
+import { TextAnimate } from "../magicui/text-animate";
+import { BlurFade } from "@/components/magicui/blur-fade";
+import Image from "next/image";
 
 export const Hero = () => (
   <div className="w-full py-20 lg:py-40">
@@ -8,32 +12,79 @@ export const Hero = () => (
       <div className="grid grid-cols-1 gap-8 items-center md:grid-cols-2">
         <div className="flex gap-4 flex-col">
           <div>
-            <Badge variant="outline">We&apos;re live!</Badge>
+            <Badge
+              variant="outline"
+              className="px-4 py-2 shadow-lg shadow-primary/25 border-primary/50 bg-gradient-to-r from-background to-primary/5"
+            >
+              Confiado por{" "}
+              <AnimatedNumber
+                value={120}
+                startValue={0}
+                springOptions={{
+                  bounce: 0,
+                  duration: 8000,
+                }}
+                className="font-semibold"
+              />{" "}
+              empresas
+            </Badge>
           </div>
           <div className="flex gap-4 flex-col">
             <h1 className="text-5xl md:text-7xl max-w-lg tracking-tighter text-left font-regular">
-              This is the start of something!
+              <TextAnimate animation="blurInUp" by="character" once>
+                Consultoría que une propósito, tecnología y personas
+              </TextAnimate>
             </h1>
             <p className="text-xl leading-relaxed tracking-tight text-muted-foreground max-w-md text-left">
-              Managing a small business today is already tough. Avoid further
-              complications by ditching outdated, tedious trade methods. Our
-              goal is to streamline SMB trade, making it easier and faster than
-              ever.
+              Transformamos organizaciones con un enfoque consciente, modular y
+              centrado en el ser. Creamos impacto real combinando estrategia,
+              cultura e innovación.
             </p>
           </div>
           <div className="flex flex-row gap-4">
-            <Button size="lg" className="gap-4" variant="outline">
-              Jump on a call <PhoneCall className="w-4 h-4" />
-            </Button>
             <Button size="lg" className="gap-4">
-              Sign up here <MoveRight className="w-4 h-4" />
+              Conócenos <MoveRight className="w-4 h-4" />
             </Button>
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-8">
-          <div className="bg-muted rounded-md aspect-square"></div>
-          <div className="bg-muted rounded-md row-span-2"></div>
-          <div className="bg-muted rounded-md aspect-square"></div>
+        <div className="grid grid-cols-2 gap-4 h-[600px]">
+          <BlurFade delay={0.25} inView>
+            <div className="flex flex-col gap-4">
+              <BlurFade delay={0.35} inView>
+                <div className="relative rounded-md overflow-hidden h-[350px] bg-muted">
+                  <Image
+                    src="/first.jpg"
+                    alt="Smart Chain Solutions - Transformación empresarial"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                  />
+                </div>
+              </BlurFade>
+              <BlurFade delay={0.45} inView>
+                <div className="relative rounded-md overflow-hidden h-[230px] bg-muted">
+                  <Image
+                    src="/second.jpg"
+                    alt="Smart Chain Solutions - Transformación empresarial"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                  />
+                </div>
+              </BlurFade>
+            </div>
+          </BlurFade>
+          <BlurFade delay={0.55} inView>
+            <div className="relative rounded-md overflow-hidden h-full bg-muted">
+              <Image
+                src="/thirt.png"
+                alt="Smart Chain Solutions - Transformación empresarial"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 50vw, 25vw"
+              />
+            </div>
+          </BlurFade>
         </div>
       </div>
     </div>

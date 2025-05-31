@@ -5,40 +5,39 @@ export const Competitive = () => {
   // Datos de comparación entre nuestra solución y las alternativas tradicionales
   const comparisonData = [
     {
-      feature: "Integración rápida",
-      description: "Implementación en menos de 2 semanas",
+      feature: "Enfoque Human Centric",
+      description: "Personas en el centro de la transformación",
       weOffer: true,
       competitors: false,
+      competitorDescription: "Solo datos y procesos"
     },
     {
-      feature: "Seguridad avanzada",
-      description: "Protección de datos con tecnología blockchain",
+      feature: "Modularidad real",
+      description: "Soluciones adaptables a tu ritmo y necesidades",
       weOffer: true,
       competitors: false,
+      competitorDescription: "Paquetes fijos"
     },
     {
-      feature: "Escalabilidad",
-      description: "Crece con tu negocio sin complicaciones",
+      feature: "Filosofía ikigai",
+      description: "Propósito, pasión y transformación integral",
       weOffer: true,
       competitors: false,
+      competitorDescription: "Visión fragmentada"
     },
     {
-      feature: "Soporte 24/7",
-      description: "Asistencia técnica disponible en todo momento",
-      weOffer: true,
-      competitors: true,
-    },
-    {
-      feature: "Costos transparentes",
-      description: "Sin tarifas ocultas ni sorpresas",
+      feature: "All You Can Learn",
+      description: "Aprendizaje ilimitado durante la transformación",
       weOffer: true,
       competitors: false,
+      competitorDescription: "Consultas limitadas"
     },
     {
-      feature: "Personalización total",
-      description: "Adaptado a las necesidades específicas de tu empresa",
+      feature: "Tecnología + Cultura",
+      description: "Integración holística de tecnología y bienestar",
       weOffer: true,
       competitors: false,
+      competitorDescription: "Visión técnica aislada"
     },
   ];
 
@@ -51,10 +50,10 @@ export const Competitive = () => {
           </div>
           <div className="flex gap-2 flex-col">
             <h2 className="text-3xl md:text-5xl tracking-tighter max-w-2xl font-regular">
-              Ventajas Competitivas
+              No somos una consultora más
             </h2>
             <p className="text-lg max-w-2xl leading-relaxed tracking-tight text-muted-foreground">
-              Descubre por qué nuestra solución blockchain supera a las alternativas tradicionales en el mercado.
+              Y eso te conviene. Descubre qué nos hace diferentes.
             </p>
           </div>
         </div>
@@ -65,7 +64,7 @@ export const Competitive = () => {
               <tr className="border-b border-muted">
                 <th className="py-4 px-6 text-left font-medium text-lg">Características</th>
                 <th className="py-4 px-6 text-center font-medium text-lg">Smart Chain Solutions</th>
-                <th className="py-4 px-6 text-center font-medium text-lg">Soluciones Tradicionales</th>
+                <th className="py-4 px-6 text-center font-medium text-lg">Las demás</th>
               </tr>
             </thead>
             <tbody>
@@ -78,26 +77,19 @@ export const Competitive = () => {
                     </div>
                   </td>
                   <td className="py-4 px-6 text-center">
-                    {item.weOffer ? (
-                      <div className="flex justify-center">
-                        <Check className="w-6 h-6 text-primary" />
-                      </div>
-                    ) : (
-                      <div className="flex justify-center">
-                        <X className="w-6 h-6 text-muted-foreground" />
-                      </div>
-                    )}
+                    <div className="flex justify-center items-center gap-2">
+                      <Check className="w-6 h-6 text-primary" />
+                      <span className="text-sm font-medium text-primary">Sí</span>
+                    </div>
                   </td>
                   <td className="py-4 px-6 text-center">
-                    {item.competitors ? (
-                      <div className="flex justify-center">
-                        <Check className="w-6 h-6 text-muted-foreground" />
-                      </div>
-                    ) : (
-                      <div className="flex justify-center">
+                    <div className="flex flex-col items-center gap-1">
+                      <div className="flex justify-center items-center gap-2">
                         <X className="w-6 h-6 text-destructive" />
+                        <span className="text-sm font-medium text-destructive">No</span>
                       </div>
-                    )}
+                      <span className="text-xs text-muted-foreground">{item.competitorDescription}</span>
+                    </div>
                   </td>
                 </tr>
               ))}
@@ -107,7 +99,7 @@ export const Competitive = () => {
 
         <div className="mt-8 text-center">
           <p className="text-sm text-muted-foreground">
-            * Basado en un análisis comparativo de las soluciones blockchain disponibles en el mercado actual.
+            * Basado en nuestro análisis del mercado de consultoría empresarial actual.
           </p>
         </div>
       </div>

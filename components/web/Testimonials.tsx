@@ -7,12 +7,36 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
-import { User } from "lucide-react";
+import { Quote } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export const Testimonials = () => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
+
+  const testimonials = [
+    {
+      quote:
+        "Con Smart Chain no solo crecimos… reconectamos con lo que realmente somos como organización.",
+      author: "Diana M.",
+      role: "CEO Retail LATAM",
+      avatar: "DM",
+    },
+    {
+      quote:
+        "La experiencia All You Can Learn nos dio acceso continuo a formación y apoyo. No solo cambiamos procesos, cambiamos mentalidades.",
+      author: "Carlos G.",
+      role: "Gerente de Innovación",
+      avatar: "CG",
+    },
+    {
+      quote:
+        "No nos vendieron un informe. Se sentaron con nosotros, observaron, preguntaron… y nos ayudaron a evolucionar.",
+      author: "Verónica L.",
+      role: "Directora de Cultura",
+      avatar: "VL",
+    },
+  ];
 
   useEffect(() => {
     if (!api) {
@@ -27,40 +51,43 @@ export const Testimonials = () => {
         api.scrollNext();
         setCurrent(current + 1);
       }
-    }, 4000);
+    }, 6000);
   }, [api, current]);
 
   return (
-    <div className="w-full py-20 lg:py-40">
+    <div id="testimonials" className="w-full py-20 lg:py-40">
       <div className="container mx-auto">
         <div className="flex flex-col gap-10">
-          <h2 className="text-3xl md:text-5xl tracking-tighter lg:max-w-xl font-regular text-left">
-            Trusted by thousands of businesses worldwide
+          <h2 className="text-3xl md:text-5xl tracking-tighter lg:max-w-2xl font-regular text-left">
+            Testimonios con enfoque en evolución humana
           </h2>
           <Carousel setApi={setApi} className="w-full">
             <CarouselContent>
-              {Array.from({ length: 15 }).map((_, index) => (
+              {testimonials.map((testimonial, index) => (
                 <CarouselItem className="lg:basis-1/2" key={index}>
                   <div className="bg-muted rounded-md h-full lg:col-span-2 p-6 aspect-video flex justify-between flex-col">
-                    <User className="w-8 h-8 stroke-1" />
+                    <Quote className="w-8 h-8 stroke-1 text-primary/60" />
                     <div className="flex flex-col gap-4">
                       <div className="flex flex-col">
-                        <h3 className="text-xl tracking-tight">
-                          Best decision
-                        </h3>
-                        <p className="text-muted-foreground max-w-xs text-base">
-                          Our goal was to streamline SMB trade, making it easier
-                          and faster than ever and we did it together.
-                        </p>
+                        <blockquote className="text-lg leading-relaxed">
+                          "{testimonial.quote}"
+                        </blockquote>
                       </div>
-                      <p className="flex flex-row gap-2 text-sm items-center">
-                        <span className="text-muted-foreground">By</span>{" "}
-                        <Avatar className="h-6 w-6">
-                          <AvatarImage src="https://github.com/shadcn.png" />
-                          <AvatarFallback>CN</AvatarFallback>
+                      <div className="flex flex-row gap-3 items-center">
+                        <Avatar className="h-10 w-10">
+                          <AvatarFallback className="bg-primary/10 text-primary font-medium">
+                            {testimonial.avatar}
+                          </AvatarFallback>
                         </Avatar>
-                        <span>John Johnsen</span>
-                      </p>
+                        <div className="flex flex-col">
+                          <span className="font-medium">
+                            {testimonial.author}
+                          </span>
+                          <span className="text-sm text-muted-foreground">
+                            {testimonial.role}
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </CarouselItem>

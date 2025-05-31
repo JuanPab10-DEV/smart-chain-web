@@ -13,55 +13,71 @@ import { Menu, MoveRight, X } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
 import { ThemeToggle } from "@/components/ui/theme.toggle";
+import Image from "next/image";
+import { InteractiveButton } from "../ui/interactive-button";
+
+const scrollToSection = (sectionId: string) => {
+  const element = document.getElementById(sectionId);
+  if (element) {
+    const navbarHeight = 80;
+    const elementPosition = element.offsetTop - navbarHeight;
+    window.scrollTo({
+      top: elementPosition,
+      behavior: "smooth",
+    });
+  }
+};
 
 export const NavBar = () => {
   const navigationItems = [
     {
-      title: "Home",
+      title: "Inicio",
       href: "/",
       description: "",
     },
     {
-      title: "Product",
-      description: "Managing a small business today is already tough.",
+      title: "Servicios",
+      description:
+        "Módulos de transformación adaptados a tu realidad organizacional",
       items: [
         {
-          title: "Reports",
-          href: "/reports",
+          title: "Productividad desde el ser",
+          section: "benefits",
         },
         {
-          title: "Statistics",
-          href: "/statistics",
+          title: "Transformación digital empática",
+          section: "process",
         },
         {
-          title: "Dashboards",
-          href: "/dashboards",
+          title: "Logística consciente",
+          section: "testimonials",
         },
         {
-          title: "Recordings",
-          href: "/recordings",
+          title: "Eficiencia organizacional",
+          section: "cta",
         },
       ],
     },
     {
-      title: "Company",
-      description: "Managing a small business today is already tough.",
+      title: "Empresa",
+      description:
+        "Conoce nuestra filosofía human centric y modelo All You Can Learn",
       items: [
         {
-          title: "About us",
-          href: "/about",
+          title: "Nuestro proceso",
+          section: "process",
         },
         {
-          title: "Fundraising",
-          href: "/fundraising",
+          title: "Lo que nos mueve",
+          section: "benefits",
         },
         {
-          title: "Investors",
-          href: "/investors",
+          title: "Testimonios",
+          section: "testimonials",
         },
         {
-          title: "Contact us",
-          href: "/contact",
+          title: "Contacto",
+          section: "cta",
         },
       ],
     },
@@ -79,7 +95,14 @@ export const NavBar = () => {
                   {item.href ? (
                     <>
                       <NavigationMenuLink>
-                        <Button variant="ghost">{item.title}</Button>
+                        <Button
+                          variant="ghost"
+                          onClick={() =>
+                            window.scrollTo({ top: 0, behavior: "smooth" })
+                          }
+                        >
+                          {item.title}
+                        </Button>
                       </NavigationMenuLink>
                     </>
                   ) : (
@@ -96,20 +119,27 @@ export const NavBar = () => {
                                 {item.description}
                               </p>
                             </div>
-                            <Button size="sm" className="mt-10">
-                              Book a call today
-                            </Button>
+                            <button
+                              onClick={() => scrollToSection("cta")}
+                              className="relative mt-10 px-6 py-2 text-sm font-medium text-white bg-gradient-to-r from-[oklch(0.70_0.18_248.5)] to-[oklch(0.60_0.20_268.5)] rounded-lg overflow-hidden transition-all hover:scale-105 hover:shadow-xl"
+                            >
+                              <span className="relative z-10">
+                                Agenda tu diagnóstico
+                              </span>
+                              <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.75_0.22_248.5)] to-[oklch(0.65_0.25_268.5)] opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                              <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.55_0.15_248.5)] to-[oklch(0.50_0.18_268.5)] opacity-0 hover:opacity-100 blur-xl transition-opacity duration-300"></div>
+                            </button>
                           </div>
                           <div className="flex flex-col text-sm h-full justify-end">
                             {item.items?.map((subItem) => (
-                              <NavigationMenuLink
-                                href={subItem.href}
+                              <div
                                 key={subItem.title}
-                                className="flex flex-row justify-between items-center hover:bg-muted py-2 px-4 rounded"
+                                onClick={() => scrollToSection(subItem.section)}
+                                className="flex flex-row justify-between items-center hover:bg-muted py-2 px-4 rounded cursor-pointer transition-colors"
                               >
                                 <span>{subItem.title}</span>
                                 <MoveRight className="w-4 h-4 text-muted-foreground" />
-                              </NavigationMenuLink>
+                              </div>
                             ))}
                           </div>
                         </div>
@@ -122,18 +152,35 @@ export const NavBar = () => {
           </NavigationMenu>
         </div>
         <div className="flex lg:justify-center">
-          <p className="font-semibold">TWBlocks</p>
+          <Image
+            src="/smart.png"
+            alt="Smart Chain Solutions"
+            width={60}
+            height={60}
+          />
         </div>
-        <div className="flex justify-end w-full gap-4">
-          <Button variant="ghost" className="hidden md:inline">
-            Book a demo
+        <div className="flex items-center justify-end w-full gap-4">
+          <Button
+            variant="ghost"
+            className="hidden md:inline"
+            onClick={() => scrollToSection("cta")}
+          >
+            Diagnóstico gratuito
           </Button>
           <div className="border-r hidden md:inline"></div>
           <div className="hidden md:inline">
             <ThemeToggle />
           </div>
-          <Button variant="outline">Sign in</Button>
-          <Button>Get started</Button>
+          <Button
+            variant="outline"
+            onClick={() => scrollToSection("testimonials")}
+          >
+            Casos de éxito
+          </Button>
+          <InteractiveButton
+            onClick={() => scrollToSection("cta")}
+            text="Empezar ahora"
+          />
         </div>
         <div className="flex w-12 shrink lg:hidden items-end justify-end">
           <Button variant="ghost" onClick={() => setOpen(!isOpen)}>
@@ -148,32 +195,47 @@ export const NavBar = () => {
                 <div key={item.title}>
                   <div className="flex flex-col gap-2">
                     {item.href ? (
-                      <Link
-                        href={item.href}
-                        className="flex justify-between items-center"
+                      <div
+                        onClick={() => {
+                          window.scrollTo({ top: 0, behavior: "smooth" });
+                          setOpen(false);
+                        }}
+                        className="flex justify-between items-center cursor-pointer"
                       >
                         <span className="text-lg">{item.title}</span>
                         <MoveRight className="w-4 h-4 stroke-1 text-muted-foreground" />
-                      </Link>
+                      </div>
                     ) : (
                       <p className="text-lg">{item.title}</p>
                     )}
                     {item.items &&
                       item.items.map((subItem) => (
-                        <Link
+                        <div
                           key={subItem.title}
-                          href={subItem.href}
-                          className="flex justify-between items-center"
+                          onClick={() => {
+                            scrollToSection(subItem.section);
+                            setOpen(false);
+                          }}
+                          className="flex justify-between items-center cursor-pointer"
                         >
                           <span className="text-muted-foreground">
                             {subItem.title}
                           </span>
                           <MoveRight className="w-4 h-4 stroke-1" />
-                        </Link>
+                        </div>
                       ))}
                   </div>
                 </div>
               ))}
+              <div className="pt-4 border-t flex justify-center">
+                <InteractiveButton
+                  text="Empezar ahora"
+                  onClick={() => {
+                    scrollToSection("cta");
+                    setOpen(false);
+                  }}
+                />
+              </div>
             </div>
           )}
         </div>

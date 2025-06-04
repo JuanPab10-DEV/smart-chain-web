@@ -10,7 +10,7 @@ export const Process = () => {
       subtitle: "(Diagnóstico)",
       description:
         "Profundizamos en tu realidad actual para entender no solo qué necesitas, sino por qué lo necesitas.",
-      color: "bg-yellow-100 border-yellow-200",
+      color: "bg-yellow-100 border-yellow-200 ",
       rotate: "-rotate-3",
       position: "top-4 left-8",
     },
@@ -59,20 +59,23 @@ export const Process = () => {
   return (
     <div
       id="process"
-      className="w-full py-20 lg:py-40 bg-gradient-to-br from-slate-50 to-gray-100"
+      className="w-full py-20 lg:py-40 bg-gradient-to-b from-stone-50 to-stone-200/50 dark:from-black dark:to-gray-900 "
     >
       <div className="container mx-auto px-4">
         <div className="flex gap-4 flex-col items-center text-center mb-16">
           <div>
-            <Badge variant="outline" className="bg-white/70 backdrop-blur-sm">
+            <Badge
+              variant="outline"
+              className="bg-white/70 backdrop-blur-sm dark:bg-gray-900/70 dark:text-gray-300"
+              >
               Transformación guiada
             </Badge>
           </div>
           <div className="flex gap-2 flex-col">
-            <h2 className="text-3xl md:text-5xl tracking-tighter max-w-2xl font-regular text-gray-900">
+            <h2 className="text-3xl md:text-5xl tracking-tighter max-w-2xl font-regular text-gray-900 dark:text-white">
               Un camino claro para que evoluciones, no solo mejores
             </h2>
-            <p className="text-lg max-w-2xl leading-relaxed tracking-tight text-gray-600">
+            <p className="text-lg max-w-2xl leading-relaxed tracking-tight text-gray-600 dark:text-gray-300">
               Nuestro proceso está diseñado para guiar tu transformación, no
               solo mejorar tu desempeño.
             </p>
@@ -316,7 +319,7 @@ export const Process = () => {
         <div className="flex justify-center mt-16">
           <Button
             size="lg"
-            className="px-8 py-3 bg-gray-900 hover:bg-gray-800 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+            className="px-8 py-3 bg-gray-900 hover:bg-gray-800 dark:bg-gray-100 dark:hover:bg-gray-200 text-white dark:text-gray-900 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
           >
             Quiero vivir este proceso
           </Button>

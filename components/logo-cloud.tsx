@@ -8,7 +8,7 @@ export default function LogoCloud() {
             <div className="group relative m-auto max-w-7xl px-6">
                 <div className="flex flex-col items-center md:flex-row">
                     <div className="md:max-w-44 md:border-r md:pr-6">
-                        <p className="text-end text-sm">Powering the best teams</p>
+                        <p className="text-end text-sm">Impulsado las mejores empresas</p>
                     </div>
                     <div className="relative py-6 md:w-[calc(100%-11rem)]">
                         <InfiniteSlider
@@ -17,9 +17,9 @@ export default function LogoCloud() {
                             gap={112}>
                             <div className="flex">
                                 <Image
-                                    className="mx-auto h-5 w-fit dark:invert"
-                                    src="https://html.tailus.io/blocks/customers/nvidia.svg"
-                                    alt="Nvidia Logo"
+                                    className="mx-auto w-fit dark:invert"
+                                    src="/novaventa-logo.png"
+                                    alt="Novaventa Logo"
                                     height={20}
                                     width={80}
                                 />
@@ -27,54 +27,54 @@ export default function LogoCloud() {
 
                             <div className="flex">
                                 <Image
-                                    className="mx-auto h-4 w-fit dark:invert"
-                                    src="https://html.tailus.io/blocks/customers/column.svg"
-                                    alt="Column Logo"
+                                    className="mx-auto w-fit dark:invert"
+                                    src="/camara-armenia.png"
+                                    alt="Camara Armenia Logo"
                                     height={16}
                                     width={80}
                                 />
                             </div>
                             <div className="flex">
                                 <Image
-                                    className="mx-auto h-4 w-fit dark:invert"
-                                    src="https://html.tailus.io/blocks/customers/github.svg"
-                                    alt="GitHub Logo"
+                                    className="mx-auto w-fit dark:invert"
+                                    src="/camara-bogota.png"
+                                    alt="Camara Bogota Logo"
                                     height={16}
                                     width={80}
                                 />
                             </div>
                             <div className="flex">
                                 <Image
-                                    className="mx-auto h-5 w-fit dark:invert"
-                                    src="https://html.tailus.io/blocks/customers/nike.svg"
-                                    alt="Nike Logo"
+                                    className="mx-auto h-12 mt-6 w-fit invert dark:invert-0"
+                                    src="/colombia-logo.webp"
+                                    alt="Colombiana Logo"
+                                    height={10}
+                                    width={160}
+                                />
+                            </div>
+                            <div className="flex">
+                                <Image
+                                    className="mx-auto  w-fit dark:invert"
+                                    src="/haceb-logo.png"
+                                    alt="Haceb Logo"
                                     height={20}
                                     width={80}
                                 />
                             </div>
                             <div className="flex">
                                 <Image
-                                    className="mx-auto h-5 w-fit dark:invert"
-                                    src="https://html.tailus.io/blocks/customers/lemonsqueezy.svg"
-                                    alt="Lemon Squeezy Logo"
-                                    height={20}
-                                    width={80}
-                                />
-                            </div>
-                            <div className="flex">
-                                <Image
-                                    className="mx-auto h-4 w-fit dark:invert"
-                                    src="https://html.tailus.io/blocks/customers/laravel.svg"
-                                    alt="Laravel Logo"
+                                    className="mx-auto  w-fit dark:invert"
+                                    src="/offcorss-logo.png"
+                                    alt="Offcorss Logo"
                                     height={16}
                                     width={80}
                                 />
                             </div>
                             <div className="flex">
                                 <Image
-                                    className="mx-auto h-7 w-fit dark:invert"
-                                    src="https://html.tailus.io/blocks/customers/lilly.svg"
-                                    alt="Lilly Logo"
+                                    className="mx-auto  w-fit dark:invert"
+                                    src="/tcc-logo.png"
+                                    alt="TCC Logo"
                                     height={28}
                                     width={80}
                                 />
@@ -82,9 +82,9 @@ export default function LogoCloud() {
 
                             <div className="flex">
                                 <Image
-                                    className="mx-auto h-6 w-fit dark:invert"
-                                    src="https://html.tailus.io/blocks/customers/openai.svg"
-                                    alt="OpenAI Logo"
+                                    className="mx-auto w-fit dark:invert"
+                                    src="/yamaha-logo.png"
+                                    alt="Yamaha Logo"
                                     height={24}
                                     width={80}
                                 />

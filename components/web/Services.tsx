@@ -22,7 +22,7 @@ export const Services = () => (
       <div className="flex flex-col gap-10">
         <div className="flex gap-4 flex-col items-start">
           <div>
-            <Badge>Servicios</Badge>
+            <Badge variant={'outline'}>Servicios</Badge>
           </div>
           <div className="flex gap-2 flex-col">
             <h2 className="text-3xl md:text-5xl text-nowrap tracking-tighter max-w-xl font-regular text-left">

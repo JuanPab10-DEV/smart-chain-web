@@ -7,7 +7,7 @@ export const Process = () => (
     <div className="container mx-auto">
       <div className="flex gap-4 flex-col items-center text-center mb-16">
         <div>
-          <Badge>Transformación guiada</Badge>
+          <Badge variant={'outline'}>Transformación guiada</Badge>
         </div>
         <div className="flex gap-2 flex-col">
           <h2 className="text-3xl md:text-5xl tracking-tighter max-w-2xl font-regular">

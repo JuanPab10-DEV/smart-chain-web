@@ -2,6 +2,7 @@
 import React from 'react';
 import type { ComponentProps, ReactNode } from 'react';
 import { motion, useReducedMotion } from 'motion/react';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { FacebookIcon, LinkedinIcon, XIcon, YoutubeIcon } from 'lucide-react';
 import Image from 'next/image';
 

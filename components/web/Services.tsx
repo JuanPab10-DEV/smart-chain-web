@@ -1,17 +1,18 @@
-'use client'
+"use client";
 
 import { User, Brain, Truck, ChartBar } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { BlurFade } from "@/components/magicui/blur-fade";
+import { ProgressiveBlur } from "../ui/progressive-blur";
 
-// Función para scroll suave a secciones
+
 const scrollToSection = (sectionId: string) => {
   const element = document.getElementById(sectionId);
   if (element) {
-    element.scrollIntoView({ 
-      behavior: 'smooth',
-      block: 'start'
+    element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
     });
   }
 };
@@ -22,7 +23,7 @@ export const Services = () => (
       <div className="flex flex-col gap-10">
         <div className="flex gap-4 flex-col items-start">
           <div>
-            <Badge variant={'outline'}>Servicios</Badge>
+            <Badge variant={"outline"}>Servicios</Badge>
           </div>
           <div className="flex gap-2 flex-col">
             <h2 className="text-3xl md:text-5xl text-nowrap tracking-tighter max-w-xl font-regular text-left">
@@ -37,109 +38,84 @@ export const Services = () => (
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           <BlurFade delay={0.35} inView className="lg:col-span-2">
-            <div 
-              className="relative rounded-md h-full p-6 aspect-square lg:aspect-auto flex justify-between flex-col overflow-hidden"
-              style={{
-                backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.8) 100%), url('https://lh3.googleusercontent.com/p/AF1QipMBgrjlfGygI_t_jxhh1ZPfPRUXFo8_0roiXkHQ=s680-w680-h510-rw')`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat'
-              }}
-            >
-              <User className="w-8 h-8 stroke-1 text-white/90" />
-              <div className="flex flex-col gap-4 relative z-10">
-                <div className="flex flex-col">
-                  <h3 className="text-xl tracking-tight text-white font-semibold">
-                    Productividad desde el ser
-                  </h3>
-                  <p className="text-white/90 max-w-xs md:max-w-lg text-base">
-                    Maximizamos la eficiencia integrando herramientas digitales con
-                    bienestar laboral. Porque no hay resultados sin personas sanas.
-                  </p>
+            <div className="relative rounded-md h-full overflow-hidden">
+              <img
+                src="/photo.webp"
+                alt="Productividad desde el ser"
+                className="absolute inset-0 w-full h-full object-cover"
+                width={1000}
+                height={1000}
+              />
+              <ProgressiveBlur
+                className="pointer-events-none absolute bottom-0 left-0 h-[65%] w-full"
+                blurIntensity={1}
+              />
+              <div className="relative h-full p-6 flex flex-col justify-between">
+                <User className="w-8 h-8 stroke-1 text-white/90" />
+                <div className="flex flex-col gap-4">
+                  <div className="flex flex-col">
+                    <h3 className="text-xl tracking-tight text-white font-semibold">
+                      Productividad desde el ser
+                    </h3>
+                    <p className="text-white/90 max-w-xs md:max-w-lg text-base">
+                      Maximizamos la eficiencia integrando herramientas
+                      digitales con bienestar laboral. Porque no hay resultados
+                      sin personas sanas.
+                    </p>
+                  </div>
                 </div>
-                <Button 
-                  variant="secondary" 
-                  className="w-fit bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20 transition-all"
-                  onClick={() => scrollToSection('benefits')}
-                >
-                  Mejorar mi cultura y desempeño
-                </Button>
               </div>
             </div>
           </BlurFade>
-          
+
           <BlurFade delay={0.45} inView>
-            <div 
-              className="relative rounded-md aspect-square p-6 flex justify-between flex-col overflow-hidden"
-              style={{
-                backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.8) 100%), url('https://lh3.googleusercontent.com/p/AF1QipMBgrjlfGygI_t_jxhh1ZPfPRUXFo8_0roiXkHQ=s680-w680-h510-rw')`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat'
-              }}
+            <div
+              className="relative rounded-md aspect-square p-6 flex justify-between flex-col overflow-hidden bg-muted-foreground"
             >
-             <Brain className="w-8 h-8 stroke-1 text-white/90" />
+              <Brain className="w-8 h-8 stroke-1 text-white/90" />
               <div className="flex flex-col gap-4 relative z-10">
                 <div className="flex flex-col">
                   <h3 className="text-xl tracking-tight text-white font-semibold">
                     Transformación digital empática
                   </h3>
                   <p className="text-white/90 max-w-xs text-base">
-                    Implementamos tecnología sin perder el alma. Automatización, BI
-                    y procesos centrados en las personas.
+                    Implementamos tecnología sin perder el alma. Automatización,
+                    BI y procesos centrados en las personas.
                   </p>
                 </div>
-                <Button 
-                  variant="secondary" 
-                  className="w-fit bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20 transition-all"
-                  onClick={() => scrollToSection('process')}
-                >
-                  Digitalizar sin deshumanizar
-                </Button>
               </div>
             </div>
           </BlurFade>
 
           <BlurFade delay={0.55} inView>
-            <div 
-              className="relative rounded-md aspect-square p-6 flex justify-between flex-col overflow-hidden"
-              style={{
-                backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.8) 100%), url('https://lh3.googleusercontent.com/p/AF1QipMBgrjlfGygI_t_jxhh1ZPfPRUXFo8_0roiXkHQ=s680-w680-h510-rw')`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat'
-              }}
+            <div
+              className="relative rounded-md aspect-square p-6 flex justify-between flex-col overflow-hidden bg-muted-foreground"
+
             >
               <Truck className="w-8 h-8 stroke-1 text-white/90" />
               <div className="flex flex-col gap-4 relative z-10">
                 <div className="flex flex-col">
-                  <h3 className="text-xl tracking-tight text-white font-semibold">Logística consciente</h3>
+                  <h3 className="text-xl tracking-tight text-white font-semibold">
+                    Logística consciente
+                  </h3>
                   <p className="text-white/90 max-w-xs text-base">
-                    Reinventamos la cadena de suministro con agilidad, trazabilidad
-                    y propósito.
+                    Reinventamos la cadena de suministro con agilidad,
+                    trazabilidad y propósito.
                   </p>
                 </div>
-                <Button 
-                  variant="secondary" 
-                  className="w-fit bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20 transition-all"
-                  onClick={() => scrollToSection('testimonials')}
-                >
-                  Optimizar mi logística con visión
-                </Button>
               </div>
             </div>
           </BlurFade>
-          
+
           <BlurFade delay={0.65} inView className="lg:col-span-2">
-            <div 
-              className="relative rounded-md h-full p-6 aspect-square lg:aspect-auto flex justify-between flex-col overflow-hidden"
-              style={{
-                backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.8) 100%), url('https://lh3.googleusercontent.com/p/AF1QipMBgrjlfGygI_t_jxhh1ZPfPRUXFo8_0roiXkHQ=s680-w680-h510-rw')`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat'
-              }}
-            >
+            <div className="relative rounded-md h-full p-6 aspect-square lg:aspect-auto flex justify-between flex-col overflow-hidden">
+              <img
+                src="/photo.webp"
+                alt="Productividad desde el ser"
+                className="absolute inset-0 w-full h-full object-cover"
+                width={1000}
+                height={1000}
+              />
               <ChartBar className="w-8 h-8 stroke-1 text-white/90" />
               <div className="flex flex-col gap-4 relative z-10">
                 <div className="flex flex-col">
@@ -151,14 +127,18 @@ export const Services = () => (
                     fricción, más enfoque y propósito claro.
                   </p>
                 </div>
-                <Button 
-                  variant="secondary" 
+                <Button
+                  variant="secondary"
                   className="w-fit bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20 transition-all"
-                  onClick={() => scrollToSection('cta')}
+                  onClick={() => scrollToSection("cta")}
                 >
                   Quiero operar con propósito
                 </Button>
               </div>
+              <ProgressiveBlur
+                className="pointer-events-none absolute bottom-0 left-0 h-[80%] w-full"
+                blurIntensity={1}
+              />
             </div>
           </BlurFade>
         </div>

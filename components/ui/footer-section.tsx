@@ -2,7 +2,7 @@
 import React from 'react';
 import type { ComponentProps, ReactNode } from 'react';
 import { motion, useReducedMotion } from 'motion/react';
-import { FacebookIcon, LinkedinIcon, XIcon, YoutubeIcon } from 'lucide-react';
+import { FacebookIcon, InstagramIcon, LinkedinIcon, XIcon, YoutubeIcon } from 'lucide-react';
 import Image from 'next/image';
 
 interface FooterLink {
@@ -47,10 +47,9 @@ const footerLinks: FooterSection[] = [
 	{
 		label: 'Síguenos',
 		links: [
-			{ title: 'LinkedIn', href: '#', icon: LinkedinIcon },
-			{ title: 'X (Twitter)', href: '#', icon: XIcon },
-			{ title: 'YouTube', href: '#', icon: YoutubeIcon },
-			{ title: 'Facebook', href: '#', icon: FacebookIcon },
+			{ title: 'LinkedIn', href: 'https://www.linkedin.com/company/scs/', icon: LinkedinIcon },
+			{ title: 'Instagram', href: 'https://www.instagram.com/smartchainsolutions/', icon: InstagramIcon },
+			{ title: 'Facebook', href: 'https://www.facebook.com/smartchainsolutions/', icon: FacebookIcon },
 		],
 	},
 ];

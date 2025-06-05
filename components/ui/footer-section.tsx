@@ -2,7 +2,7 @@
 import React from 'react';
 import type { ComponentProps, ReactNode } from 'react';
 import { motion, useReducedMotion } from 'motion/react';
-import { FacebookIcon, LinkedinIcon, XIcon, YoutubeIcon } from 'lucide-react';
+import { FacebookIcon, LinkedinIcon, XIcon, YoutubeIcon, InstagramIcon } from 'lucide-react';
 import Image from 'next/image';
 
 interface FooterLink {

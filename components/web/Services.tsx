@@ -40,7 +40,7 @@ export const Services = () => (
           <BlurFade delay={0.35} inView className="lg:col-span-2">
             <div className="relative rounded-md h-full overflow-hidden">
               <img
-                src="/photo.webp"
+                src="/office-desk.jpg"
                 alt="Productividad desde el ser"
                 className="absolute inset-0 w-full h-full object-cover"
                 width={1000}
@@ -70,48 +70,33 @@ export const Services = () => (
 
           <BlurFade delay={0.45} inView>
             <div
-              className="relative rounded-md aspect-square p-6 flex justify-between flex-col overflow-hidden bg-muted-foreground"
+              className="relative rounded-md aspect-square overflow-hidden"
             >
-              <Brain className="w-8 h-8 stroke-1 text-white/90" />
-              <div className="flex flex-col gap-4 relative z-10">
-                <div className="flex flex-col">
-                  <h3 className="text-xl tracking-tight text-white font-semibold">
-                    Transformación digital empática
-                  </h3>
-                  <p className="text-white/90 max-w-xs text-base">
-                    Implementamos tecnología sin perder el alma. Automatización,
-                    BI y procesos centrados en las personas.
-                  </p>
-                </div>
-              </div>
+              <img
+                src="/bento-2.svg"
+                alt="Transformación digital"
+                className="w-full h-full object-cover"
+              />
             </div>
           </BlurFade>
 
           <BlurFade delay={0.55} inView>
             <div
-              className="relative rounded-md aspect-square p-6 flex justify-between flex-col overflow-hidden bg-muted-foreground"
-
+              className="relative rounded-md aspect-square overflow-hidden"
             >
-              <Truck className="w-8 h-8 stroke-1 text-white/90" />
-              <div className="flex flex-col gap-4 relative z-10">
-                <div className="flex flex-col">
-                  <h3 className="text-xl tracking-tight text-white font-semibold">
-                    Logística consciente
-                  </h3>
-                  <p className="text-white/90 max-w-xs text-base">
-                    Reinventamos la cadena de suministro con agilidad,
-                    trazabilidad y propósito.
-                  </p>
-                </div>
-              </div>
+              <img
+                src="/bento-1.svg"
+                alt="Logística consciente"
+                className="w-full h-full object-cover"
+              />
             </div>
           </BlurFade>
 
           <BlurFade delay={0.65} inView className="lg:col-span-2">
             <div className="relative rounded-md h-full p-6 aspect-square lg:aspect-auto flex justify-between flex-col overflow-hidden">
               <img
-                src="/photo.webp"
-                alt="Productividad desde el ser"
+                src="/woman-image.jpg"
+                alt="Eficiencia organizacional con sentido"
                 className="absolute inset-0 w-full h-full object-cover"
                 width={1000}
                 height={1000}

@@ -1,6 +1,6 @@
 "use client";
 
-import { User, Brain, Truck, ChartBar } from "lucide-react";
+import { User, ChartBar } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { BlurFade } from "@/components/magicui/blur-fade";

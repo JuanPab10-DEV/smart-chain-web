@@ -3,10 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { MoveRight, PhoneCall } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { TextAnimate } from "../magicui/text-animate";
-import { BlurFade } from "@/components/magicui/blur-fade";
 import { TrustedBy } from "@/components/ui/trusted-by";
-import Image from "next/image";
 
 
 export const Hero = () => {

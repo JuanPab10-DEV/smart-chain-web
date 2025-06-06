@@ -1,70 +1,78 @@
-import { Ear, Puzzle, Brain, Users } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import {
+  MinimalCard,
+  MinimalCardDescription,
+  MinimalCardImage,
+  MinimalCardTitle,
+} from "@/components/ui/minimal-card"
+import { Badge } from "@/components/ui/badge"
 
-export const Benefits = () => {
-  const values = [
+export function Benefits() {
+  const cards = [
     {
-      icon: Ear,
-      title: "Consciencia",
-      description: "Escuchamos antes de intervenir"
+      title: "Propósito Auténtico",
+      description:
+        "Ayudamos a las organizaciones a descubrir y conectar con su verdadero propósito, más allá de las métricas tradicionales.",
+      src: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop&crop=center",
     },
     {
-      icon: Puzzle,
-      title: "Modularidad",
-      description: "Diseñamos contigo, no para ti"
+      title: "Ikigai Organizacional",
+      description:
+        "Encontramos ese punto  dulce  dulce dulce donde tu negocio es rentable, humano, innovador y plenamente significativo.",
+      src: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=300&fit=crop&crop=center",
     },
     {
-      icon: Brain,
-      title: "Aprendizaje continuo",
-      description: "Formamos y transformamos"
+      title: "Transformación",
+      description:
+        "No aplicamos fórmulas genéricas. Cada organización tiene su propio camino hacia la excelencia y autenticidad.",
+      src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop&crop=center",
     },
     {
-      icon: Users,
-      title: "Human Centric",
-      description: "Las personas están al centro de todo"
+      title: "Transformación",
+      description:
+        "No aplicamos fórmulas genéricas. Cada organización tiene su propio camino hacia la excelencia y autenticidad.",
+      src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop&crop=center",
     }
-  ];
+  ]
 
   return (
     <div id="benefits" className="w-full py-20 lg:py-40">
       <div className="container mx-auto">
-        <div className="flex gap-4 py-20 lg:py-10 flex-col items-start">
+        <div className="flex gap-4 py-20 lg:py-10 flex-col items-center text-center">
           <div>
             <Badge variant={'outline'}>Lo que nos mueve</Badge>
           </div>
-          <div className="flex gap-2 flex-col">
+          <div className="flex gap-2 flex-col items-center">
             <h2 className="text-3xl md:text-5xl tracking-tighter lg:max-w-xl font-regular">
               Nuestro propósito es ayudarte a encontrar el tuyo
             </h2>
             <p className="text-lg max-w-xl lg:max-w-2xl leading-relaxed tracking-tight text-muted-foreground">
               No creemos en fórmulas genéricas. En Smart Chain acompañamos a las organizaciones a alinearse con su propósito y operar desde su esencia.
             </p>
-            <p className="text-lg max-w-xl lg:max-w-2xl leading-relaxed tracking-tight text-muted-foreground">
-              Nuestro enfoque parte del <em>ikigai organizacional</em>: ese punto donde tu negocio es rentable, humano, innovador… y plenamente significativo.
-            </p>
           </div>
-          <div className="flex gap-10 pt-12 flex-col w-full">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {values.map((value, index) => {
-                const IconComponent = value.icon;
-                return (
-                  <div key={index} className="flex flex-col gap-4 items-center text-center">
-                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-2">
-                      <IconComponent className="w-8 h-8 text-primary" />
-                    </div>
-                    <div className="flex flex-col gap-2">
-                      <h3 className="text-xl font-medium">{value.title}</h3>
-                      <p className="text-muted-foreground text-sm leading-relaxed">
-                        {value.description}
-                      </p>
-                    </div>
-                  </div>
-                );
-              })}
+        </div>
+
+        {/* Cards Section */}
+        <div className="w-full max-w-5xl mx-auto">
+          <div className="flex flex-col justify-center rounded-lg p-4">
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              {cards.map((card, index) => (
+                <MinimalCard className="background rounded-xl bg-[#030811] w-full sm:w-[calc(25%-12px)] max-w-[300px]" key={index}>                  <MinimalCardImage
+                    className="h-[120px]"
+                    src={card.src}
+                    alt={card.title}
+                  />
+                  <MinimalCardTitle className="text-xl font-semibold mt-4">
+                    {card.title}
+                  </MinimalCardTitle>
+                  <MinimalCardDescription className="text-muted-foreground leading-relaxed">
+                    {card.description}
+                  </MinimalCardDescription>
+                </MinimalCard>
+              ))}
             </div>
           </div>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

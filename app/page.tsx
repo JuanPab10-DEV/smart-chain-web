@@ -8,7 +8,7 @@ import { Logos } from "@/components/web/Logos";
 import { NavBar } from "@/components/web/NavBar";
 import { Process } from "@/components/web/Process";
 import { Services } from "@/components/web/Services";
-import { Testimonials } from "@/components/web/Testimonials";
+import { TestimonialsSectionDemo } from "@/components/testimonials-demo";
 
 export default function Home() {
   return (
@@ -22,7 +22,7 @@ export default function Home() {
         <Logos />
         <Services />
         <Process />
-        <Testimonials />
+        <TestimonialsSectionDemo />
         <Benefits />
         <Competitive />
         <FAQs />

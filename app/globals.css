@@ -3,6 +3,21 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Add specific marquee animation styles */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-100%)); }
+}
+
+.animate-marquee {
+  animation: marquee 60s linear infinite;
+  will-change: transform;
+}
+
+.pause {
+  animation-play-state: paused;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

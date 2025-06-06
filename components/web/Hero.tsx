@@ -1,76 +1,85 @@
-import { MoveRight } from "lucide-react";
+"use client";
+import { useEffect, useMemo, useState } from "react";
+import { motion } from "framer-motion";
+import { MoveRight, PhoneCall } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TextAnimate } from "../magicui/text-animate";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { TrustedBy } from "@/components/ui/trusted-by";
 import Image from "next/image";
 
-export const Hero = () => (
-  <div className="w-full py-20 lg:py-40">
-    <div className="container mx-auto">
-      <div className="grid grid-cols-1 gap-8 items-center md:grid-cols-2">
-        <div className="flex gap-4 flex-col">
+
+export const Hero = () => {
+  const [titleNumber, setTitleNumber] = useState(0);
+  const titles = useMemo(
+    () => ["amazing", "new", "wonderful", "beautiful", "smart"],
+    []
+  );
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      if (titleNumber === titles.length - 1) {
+        setTitleNumber(0);
+      } else {
+        setTitleNumber(titleNumber + 1);
+      }
+    }, 2000);
+    return () => clearTimeout(timeoutId);
+  }, [titleNumber, titles]);
+
+  return (
+    <div className="w-full">
+      <div className="container mx-auto">
+        <div className="flex gap-8 py-20 lg:py-40 items-center justify-center flex-col">
           <div>
             <TrustedBy />
           </div>
           <div className="flex gap-4 flex-col">
-            <h1 className="text-5xl md:text-7xl max-w-lg tracking-tighter text-left font-regular">
-              <TextAnimate animation="blurInUp" by="character" once>
-                Consultoría que une propósito, tecnología y personas
-              </TextAnimate>
+            <h1 className="text-5xl md:text-7xl max-w-2xl tracking-tighter text-center font-regular">
+              <span className="text-spektr-cyan-50">This is something</span>
+              <span className="relative flex w-full justify-center overflow-hidden text-center md:pb-4 md:pt-1">
+                &nbsp;
+                {titles.map((title, index) => (
+                  <motion.span
+                    key={index}
+                    className="absolute font-semibold"
+                    initial={{ opacity: 0, y: "-100" }}
+                    transition={{ type: "spring", stiffness: 50 }}
+                    animate={
+                      titleNumber === index
+                        ? {
+                            y: 0,
+                            opacity: 1,
+                          }
+                        : {
+                            y: titleNumber > index ? -150 : 150,
+                            opacity: 0,
+                          }
+                    }
+                  >
+                    {title}
+                  </motion.span>
+                ))}
+              </span>
             </h1>
-            <p className="text-xl leading-relaxed tracking-tight text-muted-foreground max-w-md text-left">
-              Transformamos organizaciones con un enfoque consciente, modular y
-              centrado en el ser. Creamos impacto real combinando estrategia,
-              cultura e innovación.
+
+            <p className="text-lg md:text-xl leading-relaxed tracking-tight text-muted-foreground max-w-2xl text-center">
+              Managing a small business today is already tough. Avoid further
+              complications by ditching outdated, tedious trade methods. Our
+              goal is to streamline SMB trade, making it easier and faster than
+              ever.
             </p>
           </div>
-          <div className="flex flex-row gap-4">
+          <div className="flex flex-row gap-3">
+            <Button size="lg" className="gap-4" variant="outline">
+              Jump on a call <PhoneCall className="w-4 h-4" />
+            </Button>
             <Button size="lg" className="gap-4">
-              Conócenos <MoveRight className="w-4 h-4" />
+              Sign up here <MoveRight className="w-4 h-4" />
             </Button>
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-4 h-[600px]">
-          <BlurFade delay={0.25} inView>
-            <div className="flex flex-col gap-4">
-              <BlurFade delay={0.35} inView>
-                <div className="relative rounded-md overflow-hidden h-[350px] bg-muted">
-                  <Image
-                    src="/first.jpg"
-                    alt="Smart Chain Solutions - Transformación empresarial"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 50vw, 25vw"
-                  />
-                </div>
-              </BlurFade>
-              <BlurFade delay={0.45} inView>
-                <div className="relative rounded-md overflow-hidden h-[230px] bg-muted">
-                  <Image
-                    src="/second.jpg"
-                    alt="Smart Chain Solutions - Transformación empresarial"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 50vw, 25vw"
-                  />
-                </div>
-              </BlurFade>
-            </div>
-          </BlurFade>
-          <BlurFade delay={0.55} inView>
-            <div className="relative rounded-md overflow-hidden h-full bg-muted">
-              <Image
-                src="/thirt.png"
-                alt="Smart Chain Solutions - Transformación empresarial"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 50vw, 25vw"
-              />
-            </div>
-          </BlurFade>
-        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};

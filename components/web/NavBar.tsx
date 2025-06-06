@@ -11,7 +11,6 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Menu, MoveRight, X } from "lucide-react";
 import { useState } from "react";
-import { ThemeToggle } from "@/components/ui/theme.toggle";
 import Image from "next/image";
 import { InteractiveButton } from "../ui/interactive-button";
 
@@ -166,10 +165,8 @@ export const NavBar = () => {
           >
             Diagnóstico gratuito
           </Button>
-          <div className="border-r hidden md:inline"></div>
-          <div className="hidden md:inline">
-            <ThemeToggle />
-          </div>
+
+
           <Button
             variant="outline"
             onClick={() => scrollToSection("testimonials")}
@@ -188,9 +185,6 @@ export const NavBar = () => {
           </Button>
           {isOpen && (
             <div className="absolute p-8 top-20 border-t flex flex-col w-full right-0 bg-background shadow-lg py-4 container gap-8">
-              <div className="mb-4">
-                <ThemeToggle />
-              </div>
               {navigationItems.map((item) => (
                 <div key={item.title}>
                   <div className="flex flex-col gap-2">

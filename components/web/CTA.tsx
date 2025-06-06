@@ -1,24 +1,28 @@
-
 export const CTA = () => (
-  <div id="cta" className="w-full py-20 lg:py-40">
-    <div className="container mx-auto">
-      <div 
+  <div id="cta" className="w-full py-20 lg:py-0 h-[calc(100vh*0.6)]">
+    <div className="">
+      <div
         className="flex flex-col text-center bg-muted rounded-md p-4 lg:p-14 gap-8 items-center relative"
         style={{
-          backgroundImage: 'url(/cta-banner.svg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
+          position: "relative",
+          backgroundImage: "url(/cta-banner.svg)",
+          backgroundSize: "cover",
+          backgroundPosition: "top center",
+          backgroundRepeat: "no-repeat",
         }}
       >
-        <div>
-        </div>
-        <div className="flex flex-col gap-2">
+        <div
+          className="absolute top-0 left-0 w-full h-full"
+          style={{
+            background: "linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 100%)",
+          }}
+        ></div>
+        <div className="flex flex-col gap-2 mt-[10rem] md:mt-48">
           <h3 className="text-3xl md:text-5xl tracking-tighter max-w-xl font-regular">
             ¿Listo para alinear tu negocio con su propósito y crecer desde el
             ser?
           </h3>
-          <p className="text-lg leading-relaxed tracking-tight text-muted-foreground max-w-xl">
+          <p className="text-lg leading-relaxed tracking-tight text-muted-foreground max-w-xl z-10">
             Te ayudamos a diseñar una consultoría que no solo resuelva, sino que
             transforme. Porque operar desde el ikigai no es un lujo, es una
             ventaja.
@@ -38,7 +42,7 @@ export const CTA = () => (
     <div
       className="pointer-events-none absolute -top-16 left-0 w-full h-16 z-10"
       style={{
-        background: "linear-gradient(to top, #000 0%, transparent 100%)"
+        background: "linear-gradient(to top, #000 0%, transparent 100%)",
       }}
     />
   </div>

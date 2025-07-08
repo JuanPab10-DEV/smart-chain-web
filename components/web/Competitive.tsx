@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Check, X } from "lucide-react";
+import { Minus } from "lucide-react";
 
 export const Competitive = () => {
   // Datos de comparación entre nuestra solución y las alternativas tradicionales
@@ -10,13 +11,6 @@ export const Competitive = () => {
       weOffer: true,
       competitors: false,
       competitorDescription: "Solo datos y procesos"
-    },
-    {
-      feature: "Modularidad real",
-      description: "Soluciones adaptables a tu ritmo y necesidades",
-      weOffer: true,
-      competitors: false,
-      competitorDescription: "Paquetes fijos"
     },
     {
       feature: "Filosofía ikigai",
@@ -32,12 +26,20 @@ export const Competitive = () => {
       competitors: false,
       competitorDescription: "Consultas limitadas"
     },
+    // Parciales al final
+    {
+      feature: "Modularidad real",
+      description: "Soluciones adaptables a tu ritmo y necesidades",
+      weOffer: true,
+      competitors: "partial",
+      competitorDescription: "Paquetes parcialmente flexibles"
+    },
     {
       feature: "Tecnología + Cultura",
       description: "Integración holística de tecnología y bienestar",
       weOffer: true,
-      competitors: false,
-      competitorDescription: "Visión técnica aislada"
+      competitors: "partial",
+      competitorDescription: "Visión técnica parcialmente integrada"
     },
   ];
 
@@ -85,8 +87,17 @@ export const Competitive = () => {
                   <td className="py-4 px-6 text-center">
                     <div className="flex flex-col items-center gap-1">
                       <div className="flex justify-center items-center gap-2">
-                        <X className="w-6 h-6 text-destructive" />
-                        <span className="text-sm font-medium text-destructive">No</span>
+                        {item.competitors === "partial" ? (
+                          <>
+                            <Minus className="w-6 h-6 text-yellow-400" />
+                            <span className="text-sm font-medium text-yellow-400">Parcialmente</span>
+                          </>
+                        ) : (
+                          <>
+                            <X className="w-6 h-6 text-destructive" />
+                            <span className="text-sm font-medium text-destructive">No</span>
+                          </>
+                        )}
                       </div>
                       <span className="text-xs text-muted-foreground">{item.competitorDescription}</span>
                     </div>

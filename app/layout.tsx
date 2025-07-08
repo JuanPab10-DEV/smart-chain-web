@@ -25,6 +25,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.className} antialiased`}>
+        {/* Blobs animados de fondo */}
+        <div className="fixed inset-0 -z-10 pointer-events-none overflow-hidden">
+          {/* Blob 1 */}
+          <div className="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-gradient-to-br from-purple-600 via-blue-500 to-transparent opacity-40 rounded-full blur-3xl animate-blob1" />
+          {/* Blob 2 */}
+          <div className="absolute bottom-[-10%] right-[-10%] w-[700px] h-[700px] bg-gradient-to-tr from-blue-500 via-purple-400 to-transparent opacity-30 rounded-full blur-3xl animate-blob2" />
+        </div>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

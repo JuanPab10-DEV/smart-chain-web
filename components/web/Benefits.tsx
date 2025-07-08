@@ -27,10 +27,9 @@ export function Benefits() {
       src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop&crop=center",
     },
     {
-      title: "Transformación",
-      description:
-        "No aplicamos fórmulas genéricas. Cada organización tiene su propio camino hacia la excelencia y autenticidad.",
-      src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop&crop=center",
+      title: "Crecer desde el ser",
+      description: "Generar copys con IA",
+      src: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=400&h=300&fit=crop&crop=center",
     }
   ]
 
